@@ -1055,35 +1055,50 @@ footer {
   font-size: 14px;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 /* ========================= */
 /* 📱 MOBILE */
 /* ========================= */
 
 @media (max-width: 768px) {
-
+.menu-toggle {
+    display: block;
+  }
   nav {
     padding: 16px 20px;
   }
 
   /* القائمة */
   .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: #021f3b;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
 
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
+  background: #021f3b;
 
-    display: none;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  /* 🔥 نخفيها خارج الشاشة */
+  transform: translateX(100%);
+  transition: 0.3s ease;
+}
 
   .nav-links.active {
-    display: flex;
-  }
+  transform: translateX(0);
+}
 
   /* HERO */
   .hero h1 {
